@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   const form = useRef();
-
+  const Key = String(import.meta.env.VITE_FORM_URL);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -12,7 +12,7 @@ const Contact = () => {
     event.preventDefault();
     const formData = new FormData(form.current);
 
-    formData.append("access_key", "6f880330-7b54-43be-abab-2a0c98444ca2");
+    formData.append("access_key", Key);
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
