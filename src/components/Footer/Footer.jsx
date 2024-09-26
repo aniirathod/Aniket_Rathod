@@ -11,7 +11,7 @@ const Footer = () => {
 
   const date = new Date();
   return (
-    <div className="flex flex-col items-center justify-between w-full px-10 py-10 border-y-2 pt-9 max-lg:gap-8 lg:flex-row lg:px-28 border-gray-500/70 rounded-3xl">
+    <div className="flex flex-col items-center justify-between w-full px-10 pt-8 md:py-7 border-y-2 max-lg:gap-5 xl:py-10 md:flex-row lg:px-28 border-gray-500/70 rounded-3xl">
       <div>
         <ul className="flex gap-10 text-sm font-bold h-7 lg:gap-20 xs:gap-14 ">
           {links.map((link) => (
@@ -31,7 +31,7 @@ const Footer = () => {
         </ul>
       </div>
       <div>
-        <h1 className="text-sm tracking-wide text-white/70">
+        <h1 className="text-xs tracking-wide xs:text-sm text-white/70">
           @{date.getFullYear()} Aniket Rathod Made With
           <span> &#129293;</span>{" "}
         </h1>

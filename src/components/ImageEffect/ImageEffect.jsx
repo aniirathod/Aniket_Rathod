@@ -18,7 +18,7 @@ const ImageEffect = ({ src, text, classname = "" }) => {
         <img
           src={src}
           alt={text}
-          className={` hover:scale-110 duration-200 transition-all ease-[0.37, 0, 0.63, 1]  ${classname}`}
+          className={` xl:hover:scale-110 duration-200 transition-all ease-[0.37, 0, 0.63, 1]  ${classname}`}
         />
       </motion.div>
     </motion.div>

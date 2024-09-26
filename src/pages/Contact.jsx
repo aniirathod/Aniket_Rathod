@@ -7,9 +7,11 @@ const Contact = () => {
   const Key = String(import.meta.env.VITE_FORM_URL);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     const formData = new FormData(form.current);
 
     formData.append("access_key", Key);
@@ -38,6 +40,8 @@ const Contact = () => {
       }
     } catch (error) {
       setErrorMessage("An error occurred. Please check your connection.");
+    } finally {
+      setIsLoading(false); // End loading
     }
   };
   const text1 = "Ready to bring your ideas to life?";
@@ -136,13 +140,29 @@ const Contact = () => {
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             <motion.button
               type="submit"
-              className="flex items-center justify-between w-1/2 px-8 py-5 text-xl border rounded-full xl:w-1/3 border-white/50 group hover:border-white"
+              className="flex items-center justify-between w-1/2 px-8 py-5 text-xl border rounded-full max-xs:w-8/12 xl:w-1/3 border-white/50 group hover:border-white"
               variants={item}
+              disabled={isLoading}
+              aria-disabled={isLoading}
             >
-              <span className=""> let's talk</span>{" "}
-              <span className="font-bold transition-all duration-100 ease-linear scale-125 group-hover:rotate-90">
-                &#8599;
-              </span>
+              {isLoading ? (
+                // Loading spinner
+                <div
+                  class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-gray-500 border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] "
+                  role="status"
+                >
+                  <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                    Loading...
+                  </span>
+                </div>
+              ) : (
+                <>
+                  <span className=""> let's talk</span>{" "}
+                  <span className="font-bold transition-all duration-100 ease-linear scale-125 group-hover:rotate-90">
+                    &#8599;
+                  </span>
+                </>
+              )}
             </motion.button>
           </motion.form>
         </div>

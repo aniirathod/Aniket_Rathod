@@ -9,6 +9,7 @@ import {
   Marque,
   NavBar,
 } from "../components/index";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
@@ -23,11 +24,13 @@ const Home = () => {
 
       {/* Marque text */}
       <div className="w-full mt-10 hover:text-stroke-2 ">
-        <Marque duration={20}>
-          <div className="flex uppercase text-[6rem] -mt-7 lg:text-[13rem] select-none font-bold lg:-mt-16 w-full pr-8 lg:pr-16">
-            <span>get in touch</span>
-          </div>
-        </Marque>
+        <Link to="/contact" target="blank">
+          <Marque duration={20}>
+            <div className="flex uppercase text-[6rem] -mt-7 lg:text-[13rem] select-none font-bold lg:-mt-16 w-full pr-8 lg:pr-16">
+              <span>get in touch</span>
+            </div>
+          </Marque>
+        </Link>
       </div>
     </>
   );
