@@ -54,7 +54,7 @@ const SlidingWindow = ({ isOpen, navLinks, setIsOpen }) => {
       { name: "LinkedIn", path: "https://www.linkedin.com/in/aniket-rathod0" },
       { name: "Github", path: "https://github.com/aniirathod" },
       { name: "Email", path: "mailto:aniketnr5023@gmail.com" },
-      { name: "X", path: "" },
+      { name: "X", path: "https://x.com/Aniket__Rathod" },
     ],
     []
   );

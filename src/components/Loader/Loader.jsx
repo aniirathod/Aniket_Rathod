@@ -23,7 +23,7 @@ const Loader = ({ onLoadingComplete }) => {
           return prev;
         }
       });
-    }, 30);
+    }, 20);
 
     //creating sequences
     const sequence = async () => {
