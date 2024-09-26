@@ -17,10 +17,10 @@ const Projects = () => {
     },
     {
       src: worksImg,
-      name: "Works-Clone UI ",
+      name: "Works-Web UI ",
       techStack: "Tech:   Html, CSS , JavaScript, Locomotive JS",
-      github: "https://github.com/aniirathod/Works-Clone-website",
-      link: "https://aniirathod.github.io/Works-Clone-website/",
+      github: "https://github.com/aniirathod/Works-website-UI",
+      link: "https://aniirathod.github.io/Works-website-UI/",
     },
   ];
 
