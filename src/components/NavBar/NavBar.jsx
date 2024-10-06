@@ -10,7 +10,7 @@ const NavBar = () => {
       link: "Home",
     },
     {
-      path: "/",
+      path: "https://drive.google.com/file/d/1YyKrvqQSuJ0hjWdxrCGfsVRiNkdgQc4O/view?usp=drivesdk",
       link: "Resume",
     },
     {
@@ -159,7 +159,9 @@ const NavBar = () => {
               >
                 <HoverEffect>
                   <li>
-                    <Link to={links.path}>{links.link}</Link>
+                    <Link to={links.path} target={index == 1 ? "_blank" : ""}>
+                      {links.link}
+                    </Link>
                   </li>
                 </HoverEffect>
               </motion.div>

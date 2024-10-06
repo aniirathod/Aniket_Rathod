@@ -122,20 +122,21 @@ const SlidingWindow = ({ isOpen, navLinks, setIsOpen }) => {
           >
             <div className="">
               <ul>
-                {navLinks.map((links) => (
+                {navLinks.map((links, index) => (
                   <li
                     key={links.link}
                     className="mb-3 overflow-hidden text-5xl font-semibold tracking-tighter md:text-6xl text-white/90"
                   >
-                    <motion.div
+                    <Link
                       variants={item}
+                      to={links.path}
+                      target={index == 1 ? "_blank" : ""}
                       onClick={() => {
-                        navigate(links.path);
                         setIsOpen(false);
                       }}
                     >
                       {links.link}
-                    </motion.div>
+                    </Link>
                   </li>
                 ))}
               </ul>
