@@ -20,10 +20,7 @@ const Home = () => {
       <Skills />
       <Line classname="mt-5" />
       <Projects />
-      <ContactSection />
-
-      {/* Marque text */}
-      <div className="w-full mt-10 ">
+      <div className="w-full ">
         <Link to="/contact" target="blank">
           <Marque duration={20} classname="hover:text-stroke-2 ">
             <div className="flex uppercase text-[6rem] -mt-7 lg:text-[13rem] select-none font-bold lg:-mt-16 w-full pr-8 lg:pr-16">
@@ -32,6 +29,9 @@ const Home = () => {
           </Marque>
         </Link>
       </div>
+      <ContactSection />
+
+      {/* Marque text */}
     </>
   );
 };
