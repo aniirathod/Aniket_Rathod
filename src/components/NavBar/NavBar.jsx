@@ -10,7 +10,7 @@ const NavBar = () => {
       link: "Home",
     },
     {
-      path: "https://drive.google.com/file/d/1YyKrvqQSuJ0hjWdxrCGfsVRiNkdgQc4O/view?usp=drivesdk",
+      path: "https://drive.google.com/file/d/10mXG62sj3UUSf31tMxShoGwNgU9q8lRI/view?usp=drivesdk",
       link: "Resume",
     },
     {

@@ -3,11 +3,18 @@ import { ImageEffect, ScrambleTextReveal, TextReveal } from "../index";
 import { Link } from "react-router-dom";
 import inspireImg from "../../assets/images/Inspire_Inform.webp";
 import worksImg from "../../assets/images/WorksClone.webp";
-import { motion, useInView } from "framer-motion";
+import Starlabs from "../../assets/images/Starlabs.webp";
 
 const Projects = () => {
   const gitIcon = "https://img.icons8.com/glyph-neue/64/FFFFFF/github.png";
   const allProjects = [
+    {
+      src: Starlabs,
+      name: "Starlabs Technologies",
+      techStack:
+        "Tech:   React JS, Tailwind CSS, Framer Motion, React Three Fiber",
+      link: "https://www.starlabs.co.in/",
+    },
     {
       src: inspireImg,
       name: "Inspire Inform",
@@ -36,7 +43,7 @@ const Projects = () => {
             <div
               key={index}
               className={` lg:mb-80 mb-24  w-full sm:w-[45%]  ${
-                index % 5 === 0 || index % 5 === 3 || index % 5 === 4
+                index % 2 === 0
                   ? "lg:w-[55%] xl:w-[50rem] lg:h-[65vh] h-96  "
                   : "lg:w-[40%] xl:w-[30rem] lg:h-[75vh] h-96 "
               } ${index % 2 != 0 ? "lg:-mt-32" : ""}`}
@@ -46,9 +53,9 @@ const Projects = () => {
                   <ImageEffect
                     src={ele.src}
                     classname={` ${
-                      index % 5 === 0 || index % 5 === 3 || index % 5 === 4
+                      index % 1 === 0
                         ? "xl:w-[50rem] lg:h-[65vh] h-72 w-full  object-cover"
-                        : "xl:w-[30rem] lg:h-[75vh] h-72 w-full"
+                        : "xl:w-[30rem] lg:h-[75vh] h-72 w-full object-cover"
                     }`}
                   />
                 </div>
@@ -59,11 +66,13 @@ const Projects = () => {
                     <ScrambleTextReveal text={ele.name} />
                   </div>
                   <div className="flex items-end gap-6">
-                    <div>
-                      <Link to={ele.github} target="blank">
-                        <img src={gitIcon} alt="GitHub" className="w-6 h-6" />
-                      </Link>
-                    </div>
+                    {ele.github && (
+                      <div>
+                        <Link to={ele.github} target="blank">
+                          <img src={gitIcon} alt="GitHub" className="w-6 h-6" />
+                        </Link>
+                      </div>
+                    )}
                     <div className="text-base font-medium">
                       <Link to={ele.link} target="blank">
                         Visit
