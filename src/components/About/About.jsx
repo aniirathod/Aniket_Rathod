@@ -9,7 +9,7 @@ const About = () => {
     "Passionate about web technology, I excel at transforming creative ideas into dynamic, user-friendly web experiences, crafting clean and emotional interfaces.Currently in the final year of my BE degree from SPPU University, I aim to secure a challenging role while exploring freelance opportunities to bring diverse projects to life.";
 
   return (
-    <div className="flex flex-col justify-between w-11/12 m-auto pb-9 lg:flex-row">
+    <div className="flex flex-col justify-between w-11/12 mx-auto pb-9 lg:flex-row max-w-screen-2xl">
       <div className="w-1/3 py-8 text-lg font-semibold sm:text-2xl lg:py-0 lg:text-lg ">
         <ScrambleTextReveal text="About" />
       </div>
@@ -22,7 +22,7 @@ const About = () => {
         </div>
       </div>
       <div className="w-full lg:w-1/3">
-        <div className="px-6 text-base sm:text-xl sm:tracking-wide sm:leading-8 pt-14 lg:pt-0 lg:px-9 lg:text-xs xl:text-sm lg:font-semibold lg:text-white/70  lg:tracking-wider lg:leading-4 xl:leading-6 lg:uppercase">
+        <div className="px-6 text-base sm:text-xl sm:tracking-wide sm:leading-8 pt-14 lg:pt-0 lg:px-9 lg:text-xs xl:text-sm lg:font-semibold lg:text-white/70 lg:tracking-wider lg:leading-4 xl:leading-6 lg:uppercase">
           <TextReveal text={text} duration={0.2} delay={0.02} />
         </div>
       </div>

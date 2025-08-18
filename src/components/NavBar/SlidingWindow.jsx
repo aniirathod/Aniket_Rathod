@@ -105,7 +105,7 @@ const SlidingWindow = ({ isOpen, navLinks, setIsOpen }) => {
   }, [isOpen]);
 
   return (
-    <div className="relative h-screen overflow-hidden ">
+    <div className="relative h-screen overflow-hidden -z-10">
       {isOpen && (
         <motion.div
           className="fixed top-0 right-0 z-30 flex items-center w-full h-full text-white bg-black "

@@ -7,7 +7,7 @@ const Skills = () => {
     "Html - Css - JavaScript - React.Js - Tailwind CSS - GSAP - Framer Motion - Redux - Java - MySQL - Git - GitHub .";
 
   return (
-    <section className="flex flex-col justify-between w-11/12 m-auto pt-7 sm:pt-16 lg:flex-row">
+    <section className="flex flex-col justify-between w-11/12 m-auto pt-7 sm:pt-16 lg:flex-row max-w-screen-2xl">
       <div className="w-1/3 py-4 text-lg font-semibold sm:text-2xl lg:py-0 lg:text-lg ">
         <ScrambleTextReveal text="Skills" />
       </div>

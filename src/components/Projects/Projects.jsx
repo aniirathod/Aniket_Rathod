@@ -33,7 +33,7 @@ const Projects = () => {
 
   return (
     <>
-      <div className="w-11/12 pt-16 mx-auto ">
+      <div className="w-11/12 pt-16 mx-auto max-w-screen-2xl">
         <div className="w-11/12 text-5xl font-semibold tracking-wide lg:text-6xl lg:font-light lg:tracking-widest mb-7 lg:mb-16">
           <div>{<ScrambleTextReveal text="WORK" />}</div>
         </div>

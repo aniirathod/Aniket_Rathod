@@ -27,7 +27,7 @@ const App = () => {
           <Loader onLoadingComplete={handleLoadingComplete} />
         </div>
       ) : (
-        <div className="w-full min-h-screen text-white bg-blackish font-poppins ">
+        <div className="w-full min-h-screen overflow-hidden text-white bg-blackish font-poppins">
           <Outlet />
         </div>
       )}

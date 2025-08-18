@@ -30,7 +30,7 @@ const ContactSection = () => {
 
   return (
     <>
-      <div className="w-11/12 px-8 pt-10 pb-5 mx-auto border-2 xs:pt-16 lg:px-24 border-white/20 rounded-xl">
+      <div className="w-11/12 px-8 pt-10 pb-5 mx-auto border-2 xs:pt-16 lg:px-24 border-white/20 rounded-xl max-w-screen-2xl">
         {/* Upper part  */}
         <div className="flex flex-wrap justify-between w-full ">
           <div className="w-full sm:w-1/2 lg:w-1/3 ">

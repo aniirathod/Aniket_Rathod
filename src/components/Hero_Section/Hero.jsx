@@ -89,7 +89,7 @@ const Hero = () => {
     <>
       {isVisible && (
         <motion.div
-          className="w-full min-h-screen pt-36 xs:pt-44 sm:pt-50 md:pt-52 lg:pt-44 xl:pt-48 "
+          className="flex flex-col justify-between w-full mx-auto max-md:min-h-screen md:gap-10 pt-36 xs:pt-44 sm:pt-50 md:pt-52 lg:pt-44 max-w-screen-2xl"
           variants={container}
           initial="initial"
           animate="animate"
@@ -97,23 +97,44 @@ const Hero = () => {
           data-scroll-section
           data-scroll-speed="0.1"
         >
-          <div className=" relative  w-full h-[35vh] sm:h-[40vh]  lg:h-[30vh] flex flex-col justify-center items-center  select-none ">
-            <div className="flex justify-center w-full overflow-hidden text-5xl font-semibold uppercase sm:text-6xl md:text-7xl xs:text-6xl lg:text-7xl xl:text-8xl lg:tracking-wider">
+          {/* Highlight phone text */}
+          <div className="w-11/12 mx-auto lg:hidden text-white/70">
+            <div className="flex justify-between text-xs font-semibold sm:text-base md:text-base lg:text-xs xl:text-sm">
+              {marqueText.map((text, index) => (
+                <div
+                  key={index}
+                  className={`${index == 1 ? "lg:pr-[41rem]" : "pr-0"} ${
+                    index == 2 && "hidden lg:block md:block "
+                  } ${index == 3 && "hidden lg:block md:block"}`}
+                >
+                  {complete >= index && (
+                    <ScrambleTextReveal
+                      text={text}
+                      onComplete={handleMarque}
+                      duration={0.5}
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative flex flex-col items-center justify-center w-full overflow-hidden select-none lg:py-10">
+            <div className="flex justify-center w-full overflow-hidden text-[3rem] leading-[2.7rem] font-semibold uppercase sm:text-[5rem] md:text-7xl xs:text-6xl lg:text-7xl xl:text-8xl lg:tracking-wider">
               <motion.div variants={item}> Crafting</motion.div>
             </div>
-            <div className="flex flex-col overflow-hidden text-5xl font-semibold text-center uppercase sm:text-6xl md:text-7xl xs:text-6xl lg:text-6xl xl:text-7xl lg:tracking-wider lg:flex-row">
+            <div className="flex flex-col overflow-hidden text-[3rem] leading-[2.7rem] font-semibold text-center uppercase sm:text-[5rem] md:text-7xl xs:text-6xl lg:text-6xl xl:text-7xl lg:tracking-wider lg:flex-row">
               <motion.div variants={item}>FRONT-END</motion.div>{" "}
               <motion.div variants={item} className="lg:ml-5">
                 Experiences
               </motion.div>
             </div>
-            {/*Marquee text*/}
-            <div className="absolute w-11/12 max-lg:top-0 text-white/70">
+            {/* Highlight text*/}
+            <div className="absolute hidden w-11/12 lg:block text-white/70">
               <div className="flex justify-between text-xs font-semibold sm:text-base md:text-base lg:text-xs xl:text-sm">
                 {marqueText.map((text, index) => (
                   <div
                     key={index}
-                    className={`${index == 1 ? "lg:pr-[41vw]" : "pr-0"} ${
+                    className={`${index == 1 ? "lg:pr-[41rem]" : "pr-0"} ${
                       index == 2 && "hidden lg:block md:block "
                     } ${index == 3 && "hidden lg:block md:block"}`}
                   >
@@ -129,7 +150,8 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className=" w-11/12 mx-auto h-[30vh] flex lg:items-center justify-between flex-wrap text-white/70 xl:px-24 ">
+
+          <div className="flex flex-wrap justify-between w-11/12 mx-auto lg:items-center lg:py-4 text-white/70 xl:px-24">
             {transistionStage >= 0 && (
               <div className="overflow-hidden text-xs font-medium uppercase sm:text-base xl:text-base lg:text-sm md:1/3 lg:w-1/3 lg:pl-24">
                 <ScrambleTextReveal
@@ -160,11 +182,11 @@ const Hero = () => {
               )}
             </motion.div>
           </div>
-          <div className="flex justify-center w-full mt-14 xs:mt-8 md:-mt-5 lg:mt-10">
-            <ul className="flex gap-10 text-sm font-bold sm:text-base lg:text-sm h-7 lg:gap-20 xs:gap-14 ">
+          <div className="flex justify-center w-full overflow-hidden mt-14 xs:mt-8 md:-mt-5 lg:mt-10 lg:mb-10 ">
+            <ul className="flex flex-wrap gap-10 text-sm font-bold sm:text-base lg:text-sm h-7 lg:gap-20 xs:gap-14 ">
               {links.map((link) => (
                 <div
-                  className="relative overflow-hidden cursor-pointer group "
+                  className="relative overflow-hidden cursor-pointer group"
                   key={link.name}
                 >
                   <HoverEffect classname="pb-2 group-hover:-translate-y-7 ">

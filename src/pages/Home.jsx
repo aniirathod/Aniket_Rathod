@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 const Home = () => {
   return (
-    <>
+    <div className="">
       <NavBar />
       <Hero />
       <Line classname="xs:-mt-2 lg:-mt-9" />
@@ -32,7 +32,7 @@ const Home = () => {
       <ContactSection />
 
       {/* Marque text */}
-    </>
+    </div>
   );
 };
 
