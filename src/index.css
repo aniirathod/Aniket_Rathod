@@ -35,3 +35,9 @@
     color: transparent; /* Only show the stroke, not the text color */
   }
 }
+
+
+body.overflow-hidden {
+  overflow: hidden;
+  height: 100vh;
+}

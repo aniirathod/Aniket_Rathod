@@ -94,10 +94,10 @@ const NavBar = () => {
           variants={container}
           initial="initial"
           animate={isVisible ? "animate" : "exit"}
-          className={` flex items-center justify-between  overflow-hidden pt-8 mix-blend-difference `}
+          className={` flex items-center justify-between z-50 overflow-hidden pt-8 mix-blend-difference `}
         >
           {/* left */}
-          <motion.div variants={item} className="w-1/3 ">
+          <motion.div variants={item} className="w-1/3">
             <Link
               to="/"
               className="z-30 flex flex-col text-sm font-semibold tracking-wide xs:text-lg lg:flex-row lg:gap-2 lg:text-xl xl:text-2xl"

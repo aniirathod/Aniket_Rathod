@@ -1,10 +1,8 @@
-import React, { useMemo, useEffect } from "react";
+import { useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SlidingWindow = ({ isOpen, navLinks, setIsOpen }) => {
-  const navigate = useNavigate();
-
   const slidingVariant = {
     initial: {
       y: "-100%",
@@ -105,22 +103,22 @@ const SlidingWindow = ({ isOpen, navLinks, setIsOpen }) => {
   }, [isOpen]);
 
   return (
-    <div className="relative h-screen overflow-hidden -z-10">
+    <>
       {isOpen && (
-        <motion.div
-          className="fixed top-0 right-0 z-30 flex items-center w-full h-full text-white bg-black "
-          variants={slidingVariant}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-        >
+        <>
           <motion.div
-            className="p-4"
-            variants={container}
+            className="fixed top-0 right-0 flex items-center w-full h-full text-white bg-black -z-10 "
+            variants={slidingVariant}
             initial="initial"
             animate="animate"
+            exit="exit"
           >
-            <div className="">
+            <motion.div
+              className="p-4"
+              variants={container}
+              initial="initial"
+              animate="animate"
+            >
               <ul>
                 {navLinks.map((links, index) => (
                   <li
@@ -165,18 +163,19 @@ const SlidingWindow = ({ isOpen, navLinks, setIsOpen }) => {
                   </motion.h1>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          <motion.div
+            className="fixed right-0 w-full h-full bg-white -z-20 top-24"
+            variants={pageVariant}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          ></motion.div>
+        </>
       )}
-      <motion.div
-        className="fixed right-0 z-20 w-full h-full bg-white top-24"
-        variants={pageVariant}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-      ></motion.div>
-    </div>
+    </>
   );
 };
 
